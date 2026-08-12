@@ -19,7 +19,7 @@ An embedded project containing an ESP32 microcontroller that uses an electret mi
 * Breadboard
 * Jumper Wires
 
-The design took inspiration from the following schematic, but we made a few minor modifications: https://www.ti.com/lit/an/sboa290a/sboa290a.pdf?ts=1785880552560
+The design for the electret microphone amplifier and high pass filter took inspiration from the following schematic, but we made a few minor modifications: https://www.ti.com/lit/an/sboa290a/sboa290a.pdf?ts=1785880552560
 
 Particularly, we decided to omit the resistor R6 and the capacitor C4 from the design, because they removed the 1.65V DC offset required by the ESP32 to properly read the sound waves.
 
