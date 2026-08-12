@@ -45,10 +45,8 @@ void setup() {
 
 
 void loop() {
-
   // sample the microphone
   for (int i = 0; i < samples; i++) {
-
     microseconds = micros();
 
     vReal[i] = analogRead(MIC_PIN);
