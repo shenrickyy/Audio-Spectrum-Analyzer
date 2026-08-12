@@ -9,6 +9,7 @@
 
 // this calls from the u8g2 library to use the ssd1306 driver on a 128x64 pixel screen
 // with default name (NONAME), full (F) memory buffer, and speak on hardware I2C (HW_I2C)
+// this instance is named oled
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C oled(U8G2_R0, U8X8_PIN_NONE);
 
 const int MIC_PIN = 32;
@@ -59,7 +60,7 @@ void loop() {
   }
 
   // perform fft
-  fft.dcRemoval();                                  // removes the DC offset from the microphone
+  fft.dcRemoval();                                  // removes the DC offset from the microphone signal
   fft.windowing(FFT_WIN_TYP_HAMMING, FFT_FORWARD);  // smooths the data edges
   fft.compute(FFT_FORWARD);                         // runs the actual math
   fft.complexToMagnitude();                         // converts complex numbers to raw magnitude (basically, the volume)
@@ -75,10 +76,10 @@ void loop() {
     // NOTE: the "100" is a number that should be tuned based on the signal from the microphone
     int barHeight = map(vReal[i], 0, 100, 0, SCREEN_HEIGHT);
 
-    // makes sure it does not write to a non existent location   
+    // makes sure it does not write to a non existent location
     barHeight = constrain(barHeight, 0, SCREEN_HEIGHT);
 
-    //2 pixels per frequency band. there are 60 bands so it fits pretty nicely on 128 px
+    // 2 pixels per frequency band. there are 60 bands so it fits pretty nicely on 128 px
     int xPos = (i - 2) * 2;
 
     // draw the bar
