@@ -23,5 +23,8 @@ The design took inspiration from the following schematic, but we made a few mino
 
 Particularly, we decided to omit the resistor R6 and the capacitor C4 from the design, because they removed the 1.65V DC offset required by the ESP32 to properly read the sound waves.
 
+## Pins
+25 - AnalogRead
+
 ## Libraries used:
 U8G2 library for monochrome displays
