@@ -24,7 +24,7 @@ The design for the electret microphone amplifier and high pass filter took inspi
 Particularly, we decided to omit the resistor R6 and the capacitor C4 from the design, because they removed the 1.65V DC offset required by the ESP32 to properly read the sound waves.
 
 ## Pins
-25 - AnalogRead
+25 - ADC pin for reading sound waves
 
 ## Libraries used:
 U8G2 library for monochrome displays
